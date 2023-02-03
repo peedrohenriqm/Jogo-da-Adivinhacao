@@ -1,0 +1,38 @@
+body {
+    background-image: linear-gradient(aqua 60%,rgb(172, 172, 189));
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    text-align: center;
+    margin-top: 25%;
+}
+
+p {
+    font-size: 40px;
+}
+
+#input {
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 25px;
+    font-family:'Sofia Sans Condensed', sans-serif;
+    font-weight: bold;
+    border: 0px;
+}
+
+#button {
+    font-family:'Sofia Sans Condensed', sans-serif;
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 3px;
+    font-weight: bold;
+    border: 0px;
+    background-color: aqua;
+}
+
+#acerto {
+    font-size: 50px;
+    text-align: center;
+}
+
+#erro {
+    font-size: 50px;
+}
