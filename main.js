@@ -4,18 +4,28 @@ const input = document.getElementById("input");
 const botao = document.getElementById("button");
 const body = document.querySelector("body");
 
+
 input.focus();
 
 botao.addEventListener("click", ()=> {
     validacao();
 });
 
+
+
 function validacao() {
-    if ( input.value == numeroSorteado ) {
+    let chute = input.value;
+    if ( chute == numeroSorteado ) {
         mostraNaTela();
     } else {
         body.innerHTML = ` <div id="erro"><h1> Você errou !!! </h1>
-        <h2> O número sorteado era ${numeroSorteado}</h2></div`;
+        <h2> O número sorteado era ${numeroSorteado}</h2>
+        <button id="botaoAtualiza"> Jogar novamente </button>
+        </div`;
+        const botaoAtualiza = document.getElementById("botaoAtualiza");
+        botaoAtualiza.addEventListener("click", ()=>{
+            location.reload();
+        })
     }
 }
 
@@ -24,22 +34,5 @@ function mostraNaTela() {
     <h2> O número sorteado é ${numeroSorteado}</h2></div`
 }
 
-window.SpeechRecognition = window.SpeechRecognition ||
-webkitSpeechRecognition ;
-
-const recognition = new SpeechRecognition();
-recognition.lang = "pt-Br";
-recognition.start();
-
-recognition.addEventListener("result", onSpeak);
-
-function onSpeak (evento) {
-    const resultadoVoz = evento.results[0][0].transcript;
-    let numeroConvertido = parseInt(resultadoVoz);
-    console.log(numeroConvertido);
-    
-}
-    
-   
-
 console.log(numeroSorteado);
+
