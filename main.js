@@ -11,8 +11,6 @@ botao.addEventListener("click", ()=> {
     validacao();
 });
 
-
-
 function validacao() {
     let chute = input.value;
     if ( chute == numeroSorteado ) {
@@ -26,13 +24,26 @@ function validacao() {
         botaoAtualiza.addEventListener("click", ()=>{
             location.reload();
         })
-    }
+    } 
 }
 
 function mostraNaTela() {
     body.innerHTML = ` <div id="acerto"><h1> Você acertou !!! </h1>
-    <h2> O número sorteado é ${numeroSorteado}</h2></div`
+    <h2> O número sorteado é ${numeroSorteado}</h2>
+    <button id="botaoAtualiza"> Jogar novamente </button>
+    </div`;
+    const botaoAtualiza = document.getElementById("botaoAtualiza");
+        botaoAtualiza.addEventListener("click", ()=>{
+            location.reload();
+        })
+    
+    
 }
 
+botao.addEventListener("keypress", (evento)=> {
+    if (evento.key == "Enter" ) {
+      validacao();  
+    }
+})
 console.log(numeroSorteado);
 
